@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                Incoming Goods History
+                Data Barang Masuk
                 </h4>
             </div>
             <div class="col-auto">
@@ -13,7 +13,7 @@
                         <i class="fa fa-plus"></i>
                     </span>
                     <span class="text">
-                        Add Incoming Goods
+                        Tambah Barang Masuk
                     </span>
                 </a>
             </div>
@@ -25,10 +25,10 @@
                 <tr>
                     <th># </th>
                     <th>T- ID</th>
-                    <th>Entry Date</th>
-                    <th>Supplier</th>
-                    <th>Good's Name</th>
-                    <th>Qty</th>
+                    <th>Tanggal Masuk</th>
+                    <th>Departemen</th>
+                    <th>Nama Barang</th>
+                    <th>Total Barang</th>
                     <th>User</th>
                     <th>Action</th>
                 </tr>

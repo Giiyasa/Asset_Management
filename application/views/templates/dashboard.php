@@ -62,14 +62,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Data Master
+                Master Data
             </div>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('supplier'); ?>">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Supplier</span>
+                    <span>Departemen</span>
                 </a>
             </li>
 
@@ -77,14 +77,14 @@
             <li class="nav-item">
                 <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseMaster" aria-expanded="true" aria-controls="collapseMaster">
                     <i class="fas fa-fw fa-boxes"></i>
-                    <span>Goods</span>
+                    <span>Barang</span>
                 </a>
                 <div id="collapseMaster" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-light py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Master of Goods:</h6>
-                        <a class="collapse-item" href="<?= base_url('satuan'); ?>">Manage Unit</a>
-                        <a class="collapse-item" href="<?= base_url('jenis'); ?>">Types of Goods</a>
-                        <a class="collapse-item" href="<?= base_url('barang'); ?>">Goods Management</a>
+                        <h6 class="collapse-header">Master Data Barang:</h6>
+                        <a class="collapse-item" href="<?= base_url('satuan'); ?>">Managemen Satuan</a>
+                        <a class="collapse-item" href="<?= base_url('jenis'); ?>">Jenis Barang</a>
+                        <a class="collapse-item" href="<?= base_url('barang'); ?>">Manajemen Barang</a>
                     </div>
                 </div>
             </li>
@@ -94,14 +94,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Transactions
+                Manajemen Pemindahan barang
             </div>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('barangmasuk'); ?>">
                     <i class="fas fa-fw fa-truck-loading"></i>
-                    <span>Incoming Goods</span>
+                    <span>Barang Masuk</span>
                 </a>
             </li>
 
@@ -109,7 +109,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('barangkeluar'); ?>">
                     <i class="fas fa-fw fa-people-carry"></i>
-                    <span>Out-Going Goods</span>
+                    <span>Pemindahan Barang </span>
                 </a>
             </li>
 
@@ -141,7 +141,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('user'); ?>">
                         <i class="fas fa-fw fa-user-cog"></i>
-                        <span>User Management</span>
+                        <span>Manajemen User</span>
                     </a>
                 </li>
             <?php endif; ?>

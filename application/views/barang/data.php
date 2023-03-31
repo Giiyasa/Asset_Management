@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                   Goods Data
+                   Data Barang
                 </h4>
             </div>
             <div class="col-auto">
@@ -13,7 +13,7 @@
                         <i class="fa fa-plus"></i>
                     </span>
                     <span class="text">
-                        Add Goods
+                        Tambah Barang
                     </span>
                 </a>
             </div>
@@ -25,10 +25,10 @@
                 <tr>
                     <th>#</th>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Stock</th>
-                    <th>Unit</th>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    <th>Stok</th>
+                    <th>Satuan</th>
                     <th>Price</th>
                     <th>Action</th>
                 </tr>

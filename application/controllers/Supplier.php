@@ -14,7 +14,7 @@ class Supplier extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Supplier";
+        $data['title'] = "Departemen";
         $data['supplier'] = $this->admin->get('supplier');
         $this->template->load('templates/dashboard', 'supplier/data', $data);
     }
@@ -30,7 +30,7 @@ class Supplier extends CI_Controller
     {
         $this->_validasi();
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Supplier";
+            $data['title'] = "Departemen";
             $this->template->load('templates/dashboard', 'supplier/add', $data);
         } else {
             $input = $this->input->post(null, true);
@@ -52,7 +52,7 @@ class Supplier extends CI_Controller
         $this->_validasi();
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Supplier";
+            $data['title'] = "Departemen";
             $data['supplier'] = $this->admin->get('supplier', ['id_supplier' => $id]);
             $this->template->load('templates/dashboard', 'supplier/edit', $data);
         } else {

@@ -14,7 +14,7 @@ class Satuan extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Goods Unit";
+        $data['title'] = "Jenis Satuan";
         $data['satuan'] = $this->admin->get('satuan');
         $this->template->load('templates/dashboard', 'satuan/data', $data);
     }
@@ -29,7 +29,7 @@ class Satuan extends CI_Controller
         $this->_validasi();
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Goods Unit";
+            $data['title'] = "Jenis Satuan";
             $this->template->load('templates/dashboard', 'satuan/add', $data);
         } else {
             $input = $this->input->post(null, true);
@@ -50,7 +50,7 @@ class Satuan extends CI_Controller
         $this->_validasi();
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Goods Unit";
+            $data['title'] = "Jenis Satuan";
             $data['satuan'] = $this->admin->get('satuan', ['id_satuan' => $id]);
             $this->template->load('templates/dashboard', 'satuan/edit', $data);
         } else {

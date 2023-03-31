@@ -14,7 +14,7 @@ class Barangmasuk extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Incoming Goods";
+        $data['title'] = "Barang Masuk";
         $data['barangmasuk'] = $this->admin->getBarangMasuk();
         $this->template->load('templates/dashboard', 'barang_masuk/data', $data);
     }
@@ -31,7 +31,7 @@ class Barangmasuk extends CI_Controller
     {
         $this->_validasi();
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Incoming Goods";
+            $data['title'] = "Barang Masuk";
             $data['supplier'] = $this->admin->get('supplier');
             $data['barang'] = $this->admin->get('barang');
 

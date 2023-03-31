@@ -17,7 +17,7 @@ class User extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "User Management";
+        $data['title'] = "Manajemen User";
         $data['users'] = $this->admin->getUsers(userdata('id_user'));
         $this->template->load('templates/dashboard', 'user/data', $data);
     }
@@ -48,7 +48,7 @@ class User extends CI_Controller
         $this->_validasi('add');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Add User";
+            $data['title'] = "Tambah User";
             $this->template->load('templates/dashboard', 'user/add', $data);
         } else {
             $input = $this->input->post(null, true);
@@ -79,7 +79,7 @@ class User extends CI_Controller
         $this->_validasi('edit');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Edit User";
+            $data['title'] = "Edit User ";
             $data['user'] = $this->admin->get('user', ['id_user' => $id]);
             $this->template->load('templates/dashboard', 'user/edit', $data);
         } else {

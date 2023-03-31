@@ -14,7 +14,7 @@ class Barang extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Goods";
+        $data['title'] = "Barang";
         $data['barang'] = $this->admin->getBarang();
         $this->template->load('templates/dashboard', 'barang/data', $data);
     }
@@ -32,7 +32,7 @@ class Barang extends CI_Controller
         $this->_validasi();
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Goods";
+            $data['title'] = "Barang";
             $data['jenis'] = $this->admin->get('jenis');
             $data['satuan'] = $this->admin->get('satuan');
 
@@ -64,7 +64,7 @@ class Barang extends CI_Controller
         $this->_validasi();
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Goods";
+            $data['title'] = "Barang";
             $data['jenis'] = $this->admin->get('jenis');
             $data['satuan'] = $this->admin->get('satuan');
             $data['barang'] = $this->admin->get('barang', ['id_barang' => $id]);

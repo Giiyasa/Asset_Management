@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Edit Units Form
+                        Edit Jenis Satuan
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -24,7 +24,7 @@
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open('', [], ['id_satuan' => $satuan['id_satuan']]); ?>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nama_satuan">Unit's Name</label>
+                    <label class="col-md-3 text-md-right" for="nama_satuan">Nama Satuan</label>
                     <div class="col-md-9">
                         <input value="<?= set_value('nama_satuan', $satuan['nama_satuan']); ?>" name="nama_satuan" id="nama_satuan" type="text" class="form-control" placeholder="Unit's Name">
                         <?= form_error('nama_satuan', '<small class="text-danger">', '</small>'); ?>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-9 offset-md-3">
-                        <button type="submit" class="btn btn-primary">Make Changes</button>
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                     </div>
                 </div>
                 <?= form_close(); ?>

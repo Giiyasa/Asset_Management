@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                        Add Goods Form
+                        Form Tambah Barang
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -14,7 +14,7 @@
                                 <i class="fa fa-arrow-left"></i>
                             </span>
                             <span class="text">
-                                Back
+                                Kembali
                             </span>
                         </a>
                     </div>
@@ -24,25 +24,25 @@
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open('', [], ['stok' => 0]); ?>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="id_barang">Goods ID</label>
+                    <label class="col-md-3 text-md-right" for="id_barang">ID Barang</label>
                     <div class="col-md-9">
                         <input readonly value="<?= set_value('id_barang', $id_barang); ?>" name="id_barang" id="id_barang" type="text" class="form-control" placeholder="ID...">
                         <?= form_error('id_barang', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nama_barang">Goods Name</label>
+                    <label class="col-md-3 text-md-right" for="nama_barang">Nama Barans</label>
                     <div class="col-md-9">
                         <input value="<?= set_value('nama_barang'); ?>" name="nama_barang" id="nama_barang" type="text" class="form-control" placeholder="Enter Name">
                         <?= form_error('nama_barang', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="jenis_id">Type of Goods</label>
+                    <label class="col-md-3 text-md-right" for="jenis_id">Tipe Barang</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <select name="jenis_id" id="jenis_id" class="custom-select">
-                                <option value="" selected disabled>Please Select..</option>
+                                <option value="" selected disabled>Pilih..</option>
                                 <?php foreach ($jenis as $j) : ?>
                                     <option <?= set_select('jenis_id', $j['id_jenis']) ?> value="<?= $j['id_jenis'] ?>"><?= $j['nama_jenis'] ?></option>
                                 <?php endforeach; ?>
@@ -55,11 +55,11 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="satuan_id">Goods Unit</label>
+                    <label class="col-md-3 text-md-right" for="satuan_id">Satuan Barang</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <select name="satuan_id" id="satuan_id" class="custom-select">
-                                <option value="" selected disabled>Please Select..</option>
+                                <option value="" selected disabled>Pilih..</option>
                                 <?php foreach ($satuan as $s) : ?>
                                     <option <?= set_select('satuan_id', $s['id_satuan']) ?> value="<?= $s['id_satuan'] ?>"><?= $s['nama_satuan'] ?></option>
                                 <?php endforeach; ?>

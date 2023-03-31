@@ -14,7 +14,7 @@ class Jenis extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Goods Type";
+        $data['title'] = "Jenis Barang";
         $data['jenis'] = $this->admin->get('jenis');
         $this->template->load('templates/dashboard', 'jenis/data', $data);
     }
@@ -29,7 +29,7 @@ class Jenis extends CI_Controller
         $this->_validasi();
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Goods Type";
+            $data['title'] = "Jenis Barang";
             $this->template->load('templates/dashboard', 'jenis/add', $data);
         } else {
             $input = $this->input->post(null, true);
@@ -50,7 +50,7 @@ class Jenis extends CI_Controller
         $this->_validasi();
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Goods Type";
+            $data['title'] = "Jenis Barang";
             $data['jenis'] = $this->admin->get('jenis', ['id_jenis' => $id]);
             $this->template->load('templates/dashboard', 'jenis/edit', $data);
         } else {

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Types Data
+                    Data Tipe Barang
                 </h4>
             </div>
             <div class="col-auto">
@@ -13,7 +13,7 @@
                         <i class="fa fa-plus"></i>
                     </span>
                     <span class="text">
-                        Add Goods Type
+                        Tambah Tipe Barang
                     </span>
                 </a>
             </div>
@@ -24,7 +24,7 @@
             <thead>
                 <tr>
                     <th># </th>
-                    <th>Type Name</th>
+                    <th>Nama Tipe Barang</th>
                     <th>Action</th>
                 </tr>
             </thead>

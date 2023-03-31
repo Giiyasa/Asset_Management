@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Add Units Form
+                            Tambah Jenis Satuan
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -14,7 +14,7 @@
                                 <i class="fa fa-arrow-left"></i>
                             </span>
                             <span class="text">
-                                Back
+                                Kembali
                             </span>
                         </a>
                     </div>
@@ -24,7 +24,7 @@
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open(); ?>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nama_satuan">Unit Name</label>
+                    <label class="col-md-3 text-md-right" for="nama_satuan">Nama Satuan</label>
                     <div class="col-md-9">
                         <input value="<?= set_value('nama_satuan'); ?>" name="nama_satuan" id="nama_satuan" type="text" class="form-control" placeholder="Enter Unit's Name">
                         <?= form_error('nama_satuan', '<small class="text-danger">', '</small>'); ?>

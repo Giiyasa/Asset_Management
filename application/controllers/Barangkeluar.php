@@ -14,7 +14,7 @@ class Barangkeluar extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Out-Going Goods";
+        $data['title'] = "Pemindahan Barang";
         $data['barangkeluar'] = $this->admin->getBarangkeluar();
         $data['id_barang_keluar'] = "";
         $this->template->load('templates/dashboard', 'barang_keluar/data', $data);
@@ -49,7 +49,7 @@ class Barangkeluar extends CI_Controller
     {
         $this->_validasi();
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Out-Going Goods";
+            $data['title'] = "Pemindahan Barang";
             $data['barang'] = $this->admin->get('barang', null, ['stok >' => 0]);
 
             // Mendapatkan dan men-generate kode transaksi barang keluar
@@ -99,7 +99,7 @@ class Barangkeluar extends CI_Controller
     public function add_to_cart(){
         $this->_validasi_cart();
         if ($this->form_validation->run() == false) {
-        $data['title'] = "Out-Going Goods";
+        $data['title'] = "Pemindahan Barang";
         $data['barang'] = $this->admin->get('barang', null, ['stok >' => 0]);
 
         // Mendapatkan dan men-generate kode transaksi barang keluar

@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Edit Supplier Form 
+                            Edit Data Departemen
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -24,7 +24,7 @@
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open('', [], ['id_supplier' => $supplier['id_supplier']]); ?>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nama_supplier">Supplier's Name</label>
+                    <label class="col-md-3 text-md-right" for="nama_supplier">Nama Departemen</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -36,11 +36,11 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="no_telp">Contact Number</label>
+                    <label class="col-md-3 text-md-right" for="no_telp">Ruangan</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-fw fa-phone"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-solid fa-door-open"></i></span>
                             </div>
                             <input value="<?= set_value('no_telp', $supplier['no_telp']); ?>" name="no_telp" id="no_telp" type="text" class="form-control" placeholder="Contact Number">
                         </div>
@@ -48,13 +48,13 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="alamat">Supplier's Address</label>
+                    <label class="col-md-3 text-md-right" for="alamat">Lantai</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-fw fa-location-arrow"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-solid fa-building"></i></span>
                             </div>
-                            <textarea name="alamat" id="alamat" class="form-control" rows="4" placeholder="Supplier's Full Address"><?= set_value('alamat', $supplier['alamat']); ?></textarea>
+                            <input value="<?= set_value('alamat'); ?>" name="alamat" id="alamat" type="text" class="form-control" placeholder="Lantai">
                         </div>
                         <?= form_error('alamat', '<small class="text-danger">', '</small>'); ?>
                     </div>

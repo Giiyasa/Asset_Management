@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Add Suppliers Form
+                            Tambah Departemen
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -14,7 +14,7 @@
                                 <i class="fa fa-arrow-left"></i>
                             </span>
                             <span class="text">
-                                Back
+                                Kembali
                             </span>
                         </a>
                     </div>
@@ -24,37 +24,37 @@
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open(); ?>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nama_supplier">Supplier's Name</label>
+                    <label class="col-md-3 text-md-right" for="nama_supplier">Nama Departemen</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-fw fa-user"></i></span>
                             </div>
-                            <input value="<?= set_value('nama_supplier'); ?>" name="nama_supplier" id="nama_supplier" type="text" class="form-control" placeholder="Enter Supplier's Name">
+                            <input value="<?= set_value('nama_supplier'); ?>" name="nama_supplier" id="nama_supplier" type="text" class="form-control" placeholder="Masukan Nama Departemen">
                         </div>
                         <?= form_error('nama_supplier', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="no_telp">Contact Number</label>
+                    <label class="col-md-3 text-md-right" for="no_telp">Ruangan</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-fw fa-phone"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-solid fa-door-open"></i></span>
                             </div>
-                            <input value="<?= set_value('no_telp'); ?>" name="no_telp" id="no_telp" type="text" class="form-control" placeholder="Contact Number">
+                            <input value="<?= set_value('no_telp'); ?>" name="no_telp" id="no_telp" type="text" class="form-control" placeholder="Ruangan">
                         </div>
                         <?= form_error('no_telp', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="alamat">Supplier's Address</label>
+                    <label class="col-md-3 text-md-right" for="alamat">Lantai</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-fw fa-location-arrow"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-solid fa-building"></i></span>
                             </div>
-                            <textarea name="alamat" id="alamat" class="form-control" rows="4" placeholder="Full Address"><?= set_value('alamat'); ?></textarea>
+                            <input value="<?= set_value('alamat'); ?>" name="alamat" id="alamat" type="text" class="form-control" placeholder="Lantai">
                         </div>
                         <?= form_error('alamat', '<small class="text-danger">', '</small>'); ?>
                     </div>

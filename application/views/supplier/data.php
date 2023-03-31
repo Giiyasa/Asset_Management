@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Supplier's Data
+                    Data Departemen
                 </h4>
             </div>
             <div class="col-auto">
@@ -13,7 +13,7 @@
                         <i class="fa fa-plus"></i>
                     </span>
                     <span class="text">
-                        Add Supplier
+                        Tambah Departemen
                     </span>
                 </a>
             </div>
@@ -24,9 +24,9 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Contact</th>
-                    <th>Address</th>
+                    <th>Nama Departemen</th>
+                    <th>Ruangan</th>
+                    <th>Lantai</th>
                     <th>Action</th>
                 </tr>
             </thead>

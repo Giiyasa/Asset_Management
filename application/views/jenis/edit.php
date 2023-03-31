@@ -26,7 +26,7 @@
                 <div class="row form-group">
                     <label class="col-md-3 text-md-right" for="nama_jenis">Nama Tipe Barang</label>
                     <div class="col-md-9">
-                        <input value="<?= set_value('nama_jenis', $jenis['nama_jenis']); ?>" name="nama_jenis" id="nama_jenis" type="text" class="form-control" placeholder="Nama Jenis...">
+                        <input value="<?= set_value('nama_jenis', $jenis['nama_jenis']); ?>" name="nama_jenis" id="nama_jenis" type="text" class="form-control" placeholder="Masukan Jenis Barang">
                         <?= form_error('nama_jenis', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>

@@ -28,6 +28,7 @@
                     <th>Tanggal Masuk</th>
                     <th>Departemen</th>
                     <th>Nama Barang</th>
+                    <th>Ruangan</th>
                     <th>Total Barang</th>
                     <th>User</th>
                     <th>Action</th>
@@ -45,6 +46,7 @@
                             <td><?= $bm['tanggal_masuk']; ?></td>
                             <td><?= $bm['nama_supplier']; ?></td>
                             <td><?= $bm['nama_barang']; ?></td>
+                            <td><?= $bm['ruangan']; ?></td>
                             <td><?= number_format($bm['jumlah_masuk'],1) . ' ' . $bm['nama_satuan']; ?></td>
                             <td><?= $bm['nama']; ?></td>
                             <td>

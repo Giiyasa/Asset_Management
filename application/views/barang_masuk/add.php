@@ -72,37 +72,46 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="stok">Stock</label>
-                    <div class="col-md-5">
-                        <input readonly="readonly" id="stok" type="number" class="form-control">
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="jumlah_masuk">Total Barang </label>
+                    <label class="col-md-4 text-md-right" for="ruangan">Ruangan </label>
                     <div class="col-md-5">
                         <div class="input-group">
-                            <input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_masuk" type="number" min="0" value="0" step="0.1" class="form-control">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="satuan">Satuan</span>
-                            </div>
+                            <input value="<?= set_value('ruangan'); ?>" name="ruangan" id="ruangan" type="text"class="form-control">
                         </div>
-                        <?= form_error('jumlah_masuk', '<small class="text-danger">', '</small>'); ?>
+                        <?= form_error('ruangan', '<small class="text-danger">', '</small>'); ?>
                     </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="total_stok">Total Stock</label>
-                    <div class="col-md-5">
-                        <input readonly="readonly" id="total_stok" type="number" class="form-control">
+                </div>          
+                    <div class="row form-group">
+                        <label class="col-md-4 text-md-right" for="stok">Stock</label>
+                        <div class="col-md-5">
+                            <input readonly="readonly" id="stok" type="number" class="form-control">
+                        </div>
                     </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col offset-md-4">
-                        <button type="submit" class="btn btn-success">Save</button>
-                        <button type="reset" class="btn btn-danger">Reset</button>
+                    <div class="row form-group">
+                        <label class="col-md-4 text-md-right" for="jumlah_masuk">Total Barang </label>
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <input value="<?= set_value('jumlah_masuk'); ?>" name="jumlah_masuk" id="jumlah_masuk" type="number" min="0" value="0" step="0.1" class="form-control">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="satuan">Satuan</span>
+                                </div>
+                            </div>
+                            <?= form_error('jumlah_masuk', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
+                    <div class="row form-group">
+                        <label class="col-md-4 text-md-right" for="total_stok">Total Stock</label>
+                        <div class="col-md-5">
+                            <input readonly="readonly" id="total_stok" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col offset-md-4">
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="reset" class="btn btn-danger">Reset</button>
+                        </div>
+                    </div>
+                    <?= form_close(); ?>
                 </div>
-                <?= form_close(); ?>
             </div>
         </div>
     </div>
-</div>

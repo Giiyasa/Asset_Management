@@ -23,6 +23,7 @@ class Barangmasuk extends CI_Controller
     {
         $this->form_validation->set_rules('tanggal_masuk', 'Tanggal Masuk', 'required|trim');
         $this->form_validation->set_rules('supplier_id', 'Supplier', 'required');
+        $this->form_validation->set_rules('ruangan', 'Ruangan', 'required|trim');
         $this->form_validation->set_rules('barang_id', 'Barang', 'required');
         $this->form_validation->set_rules('jumlah_masuk', 'Jumlah Masuk', 'required|trim|numeric|greater_than[0]');
     }
@@ -34,6 +35,7 @@ class Barangmasuk extends CI_Controller
             $data['title'] = "Barang Masuk";
             $data['supplier'] = $this->admin->get('supplier');
             $data['barang'] = $this->admin->get('barang');
+            
 
             // Mendapatkan dan men-generate kode transaksi barang masuk
             $kode = 'I' . date('ymd');
@@ -42,7 +44,6 @@ class Barangmasuk extends CI_Controller
             $kode_tambah++;
             $number = str_pad($kode_tambah, 4, '0', STR_PAD_LEFT);
             $data['id_barang_masuk'] = $kode . $number;
-
             $this->template->load('templates/dashboard', 'barang_masuk/add', $data);
         } else {
             $input = $this->input->post(null, true);

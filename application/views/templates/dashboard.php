@@ -94,7 +94,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Manajemen Pemindahan barang
+                Manajemen Inventory Asset
             </div>
 
             <!-- Nav Item - Dashboard -->
@@ -369,12 +369,12 @@
         });
 
         $(document).on('keyup', '#jumlah_masuk', function() {
-            let totalStok = parseInt(stok.val()) + parseInt(this.value);
+            let totalStok = parseInt(stok.val()) - parseInt(this.value);
             total.val(Number(totalStok));
         });
 
         $(document).on('keyup', '#jumlah_keluar', function() {
-            let totalStok = parseInt(stok.val()) - parseInt(this.value);
+            let totalStok = parseInt(stok.val()) + parseInt(this.value);
             total.val(Number(totalStok));
         });
 

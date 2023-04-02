@@ -14,7 +14,7 @@
                                 <i class="fa fa-arrow-left"></i>
                             </span>
                             <span class="text">
-                            Kembali
+                                Kembali
                             </span>
                         </a>
                     </div>
@@ -76,6 +76,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row form-group">
                     <div class="col-md-9 offset-md-3">
                         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>

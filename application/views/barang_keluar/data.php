@@ -26,14 +26,14 @@
                     <th>#</th>
                     <th>T- ID</th>
                     <th>Tanggal Keluar</th>
-                    <!-- <th>Nama Barang</th> -->
+                    <th>Nama Barang</th>
                     <th>Departemen</th>
                     <th>Ruang</th>
                     <!-- <th>Jumlah Keluar</th> -->
                     <!--<th>User</th>-->
-                    <th>Disc.</th>
-                    <th>SubTotal</th>
-                    <th>Total</th>
+                    <!-- <th>Disc.</th> -->
+                    <!-- <th>SubTotal</th> -->
+                    <!-- <th>Total</th> -->
                     <th>Action</th>
                 </tr>
             </thead>
@@ -47,14 +47,14 @@
                             <td><?= $no++; ?></td>
                             <td><?= $bk['id_barang_keluar']; ?></td>
                             <td><?= $bk['tanggal_keluar']; ?></td>
-                            <!-- <td><?= $bk['nama_barang']; ?></td> -->
+                            <td><?= $bk['nama_barang']; ?></td>
                             <td><?= $bk['nama_penerima']; ?></td>
                             <td><?= $bk['alamat']; ?></td>
                             <!-- <td><?= $bk['jumlah_keluar'] . ' ' . $bk['nama_satuan']; ?></td> -->
                             <!--<td><?= $bk['nama']; ?></td>-->
-                            <td><?= '$'.number_format($bk['diskon']);?></td>
-                            <td><?= '$'.number_format($bk['total_nominal']);?></td>
-                            <td><?= '$'.number_format($bk['grand_total']);?></td>
+                            <!-- <td><?= '$'.number_format($bk['diskon']);?></td> -->
+                            <!-- <td><?= '$'.number_format($bk['total_nominal']);?></td> -->
+                            <!-- <td><?= '$'.number_format($bk['grand_total']);?></td> -->
                             <td>
                                 <a onclick="return confirm('Are you sure you want to delete this?')" href="<?= base_url('barangkeluar/delete/') . $bk['id_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                                 <a onclick="return confirm('Print the letter?')" href="<?= base_url('barangkeluar/faktur_surat_jalan/') . $bk['id_barang_keluar'] ?>" class="btn btn-success btn-circle btn-sm"><i class="fa fa-car"></i></a>

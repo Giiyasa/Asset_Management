@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Tambah Data Pemindahan Barang
+                            Tambah Data Barang Masuk
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -24,14 +24,14 @@
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open('', [], ['id_barang_masuk' => $id_barang_masuk, 'user_id' => $this->session->userdata('login_session')['user']]); ?>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="id_barang_masuk">ID Inventory</label>
+                    <label class="col-md-4 text-md-right" for="id_barang_masuk">ID IGT</label>
                     <div class="col-md-4">
                         <input value="<?= $id_barang_masuk; ?>" type="text" readonly="readonly" class="form-control">
                         <?= form_error('id_barang_masuk', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="tanggal_masuk">Tanggal Pemindahan</label>
+                    <label class="col-md-4 text-md-right" for="tanggal_masuk">Tanggal Masuk</label>
                     <div class="col-md-4">
                         <input value="<?= set_value('tanggal_masuk', date('Y-m-d')); ?>" name="tanggal_masuk" id="tanggal_masuk" type="text" class="form-control date" placeholder="Tanggal Masuk...">
                         <?= form_error('tanggal_masuk', '<small class="text-danger">', '</small>'); ?>

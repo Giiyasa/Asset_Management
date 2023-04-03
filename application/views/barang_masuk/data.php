@@ -24,8 +24,8 @@
             <thead>
                 <tr>
                     <th># </th>
-                    <th>ID Inventory</th>
-                    <th>Tanggal Pemindahan</th>
+                    <th>T- ID</th>
+                    <th>Tanggal Masuk</th>
                     <th>Departemen</th>
                     <th>Nama Barang</th>
                     <th>Ruangan</th>

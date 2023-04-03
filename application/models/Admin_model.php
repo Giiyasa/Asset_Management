@@ -83,7 +83,7 @@ class Admin_model extends CI_Model
         $this->db->select('*');
         $this->db->join('barang_keluar bk', 'bk.id_barang_keluar = bkd.id_barang_keluar');
         $this->db->join('user u', 'bk.user_id = u.id_user');
-        $this->db->join('barang b', 'bk.barang_id = b.id_barang');
+        $this->db->join('barang b', 'bkd.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
         if ($limit != null) {
             $this->db->limit($limit);
@@ -104,7 +104,7 @@ class Admin_model extends CI_Model
         $this->db->select('*');
         $this->db->join('barang_keluar bk', 'bk.id_barang_keluar = bkd.id_barang_keluar');
         // $this->db->join('user u', 'bk.user_id = u.id_user');
-        $this->db->join('barang b', 'bkd.barang_id = b.id_barang',);
+        $this->db->join('barang b', 'bkd.barang_id = b.id_barang');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
         if ($limit != null) {
             $this->db->limit($limit);
@@ -125,7 +125,7 @@ class Admin_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->join('user u', 'bk.user_id = u.id_user');
-        $this->db->join('barang b', 'bk.barang_id = b.id_barang',);
+        $this->db->join('barang b', 'bk.barang_id = b.id_barang');
         $this->db->join('jenis j', 'b.jenis_id = j.id_jenis');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
         $this->db->where('bk.id_barang_keluar', $id_barang_keluar);
@@ -135,10 +135,10 @@ class Admin_model extends CI_Model
 
     public function getIDBarangKeluar2($id_barang_keluar)
     {
-        $this->db->select('*');
+        $this->db->select('*');  
         $this->db->join('barang_keluar bk', 'bk.id_barang_keluar = bkd.id_barang_keluar');
         $this->db->join('user u', 'bk.user_id = u.id_user');
-        $this->db->join('barang b', 'bkd.barang_id = b.id_barang',);
+        $this->db->join('barang b', 'bkd.barang_id = b.id_barang');
         $this->db->join('jenis j', 'b.jenis_id = j.id_jenis');
         $this->db->join('satuan s', 'b.satuan_id = s.id_satuan');
         $this->db->where('bk.id_barang_keluar', $id_barang_keluar);
@@ -148,38 +148,35 @@ class Admin_model extends CI_Model
 
     public function findIDBarangKeluar($id)
     {
-        $query = $this->db->where('id_barang_keluar', $id)
-            // ->limit(100)
-            ->get('barang_keluar');
-        if ($query->num_rows() > 0) {
+        $query = $this->db->where('id_barang_keluar',$id)
+       // ->limit(100)
+        ->get('barang_keluar');
+        if($query->num_rows() > 0){
             return $query->row_array();
             //return $query;
-        } else {
+        }else{
             return array();
             //return $query;
         }
     }
 
-    public function simpan_cart($id_barang_keluar)
-    {
+    public function simpan_cart($id_barang_keluar){
         foreach ($this->cart->contents() as $item) {
-            $data = array(
+            $data=array(
                 'id_barang_keluar'  =>  $id_barang_keluar,
                 'barang_id'       =>  $item['id'],
                 'harga'           =>  $item['amount'],
-                'vendor_nama'   => $item['nama'],
                 'jumlah_keluar'   =>  $item['qty'],
                 'total_nominal_dtl'   =>  $item['subtotal']
             );
-            $this->db->insert('barang_keluar_dtl', $data);
+            $this->db->insert('barang_keluar_dtl',$data);
             // $this->db->query("update tbl_barang set barang_stok=barang_stok-'$item[qty]' where barang_id='$item[id]'");
         }
         return true;
     }
 
-    public function get_barang($id_barang)
-    {
-        $query = $this->db->query("SELECT * FROM barang where id_barang='$id_barang'");
+    public function get_barang($id_barang){
+        $query=$this->db->query("SELECT * FROM barang where id_barang='$id_barang'");
         return $query;
     }
 

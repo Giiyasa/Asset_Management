@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Data Barang Masuk
+                    Data Pemindahan Barang
                 </h4>
             </div>
             <div class="col-auto">
@@ -13,7 +13,7 @@
                         <i class="fa fa-plus"></i>
                     </span>
                     <span class="text">
-                        Tambah Data Barang Masuk
+                        Tambah Data Pemindahan Barang
                     </span>
                 </a>
             </div>
@@ -24,14 +24,14 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>ID Bill</th>
-                    <th>Tanggal Masuk</th>
-                    <th>Nama Barang</th>
-                    <th>Vendor</th>
+                    <th>T- ID</th>
+                    <th>Tanggal Keluar</th>
+                    <!-- <th>Nama Barang</th> -->
+                    <th>Departemen</th>
                     <th>Ruang</th>
-                    <th>Jumlah Keluar</th>
+                    <!-- <th>Jumlah Keluar</th> -->
                     <!--<th>User</th>-->
-                    <th>Discount</th>
+                    <th>Disc.</th>
                     <th>SubTotal</th>
                     <th>Total</th>
                     <th>Action</th>
@@ -47,19 +47,18 @@
                             <td><?= $no++; ?></td>
                             <td><?= $bk['id_barang_keluar']; ?></td>
                             <td><?= $bk['tanggal_keluar']; ?></td>
-                            <td><?= $bk['nama_barang']; ?></td>
-                            <td><?= $bk['nama_vendor']; ?></td>
-                            <!-- <td><?= $bk['nama_penerima']; ?></td> -->
+                            <!-- <td><?= $bk['nama_barang']; ?></td> -->
+                            <td><?= $bk['nama_penerima']; ?></td>
                             <td><?= $bk['alamat']; ?></td>
-                            <td><?= $bk['jumlah_keluar'] . ' ' . $bk['nama_satuan']; ?></td>
+                            <!-- <td><?= $bk['jumlah_keluar'] . ' ' . $bk['nama_satuan']; ?></td> -->
                             <!--<td><?= $bk['nama']; ?></td>-->
                             <td><?= '$'.number_format($bk['diskon']);?></td>
                             <td><?= '$'.number_format($bk['total_nominal']);?></td>
                             <td><?= '$'.number_format($bk['grand_total']);?></td>
                             <td>
-                                <a onclick="return confirm('Anda Yakin Untuk Menghapus Data Ini?')" href="<?= base_url('barangkeluar/delete/') . $bk['id_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
-                                <a onclick="return confirm('Print Data?')" href="<?= base_url('barangkeluar/faktur_surat_jalan/') . $bk['id_barang_keluar'] ?>" class="btn btn-success btn-circle btn-sm"><i class="fa fa-car"></i></a>
-                                <a onclick="return confirm('Print Bill?')" href="<?= base_url('barangkeluar/faktur_surat_tagihan/') . $bk['id_barang_keluar'] ?>" class="btn btn-info btn-circle btn-sm"><i class="fa fa-book"></i></a>
+                                <a onclick="return confirm('Are you sure you want to delete this?')" href="<?= base_url('barangkeluar/delete/') . $bk['id_barang_keluar'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
+                                <a onclick="return confirm('Print the letter?')" href="<?= base_url('barangkeluar/faktur_surat_jalan/') . $bk['id_barang_keluar'] ?>" class="btn btn-success btn-circle btn-sm"><i class="fa fa-car"></i></a>
+                                <a onclick="return confirm('Print Invoice?')" href="<?= base_url('barangkeluar/faktur_surat_tagihan/') . $bk['id_barang_keluar'] ?>" class="btn btn-info btn-circle btn-sm"><i class="fa fa-book"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

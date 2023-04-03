@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Tambah Data Barang Masuk
+                            Tambah Data Barang Keluar
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -47,14 +47,6 @@
                         <input readonly="readonly" id="harga" name="harga" type="number" class="form-control">
                     </div>
                 </div>
-
-                <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="vendor_nama">Nama Vendor</label>
-                    <div class="col-md-5">
-                        <input id="vendor_nama" name="vendor_nama" type="text" class="form-control">
-                    </div>
-                </div>
-
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="stok">Stock</label>
                     <div class="col-md-5">
@@ -67,7 +59,7 @@
                         <div class="input-group">
                             <input value="<?= set_value('jumlah_keluar'); ?>" name="jumlah_keluar" id="jumlah_keluar" type="number" min="0" value="0" step="0.1" class="form-control" placeholder="Out-Going Number">
                             <div class="input-group-append">
-                                <span class="input-group-text" id="satuaan">Units</span>
+                                <span class="input-group-text" id="satuan">Units</span>
                             </div>
                         </div>
                         <?= form_error('jumlah_keluar', '<small class="text-danger">', '</small>'); ?>
@@ -106,7 +98,6 @@
                 <thead>
                     <tr>
                         <th style="text-align:center;">Goods</th>
-                        <th style="text-align:center;">Vendor</th>
                         <th style="text-align:center;">Price</th>
                         <th style="text-align:center;">Quantity</th>
                         <th style="text-align:center;">Sub Total</th>
@@ -119,7 +110,6 @@
                     <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
                     <tr>
                          <td style="text-align:center;"><?=$items['id'];?> | <?=$items['name'];?></td>
-                         <td style="text-align:center;"><?=$items['nama'];?></td>
                          <td style="text-align:center;"><?php echo '$'.number_format($items['amount']);?></td>
                          <td style="text-align:center;"><?php echo number_format($items['qty'],1);?></td>
                          <td style="text-align:center;"><?php echo '$'.number_format($items['subtotal']);?></td>
@@ -165,10 +155,16 @@
                         <?= form_error('tanggal_keluar', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
-               
+                <div class="row form-group">
+                    <label class="col-md-4 text-md-right" for="nama_penerima">Name</label>
+                    <div class="col-md-5">
+                        <input id="nama_penerima" name="nama_penerima" type="text" class="form-control">
+                        <?= form_error('nama_penerima', '<small class="text-danger">', '</small>'); ?>
+                    </div>
+                </div>
 
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="alamat">Ruangan</label>
+                    <label class="col-md-4 text-md-right" for="alamat">Address</label>
                     <div class="col-md-5">
                         <input id="alamat" name="alamat" type="text" class="form-control">
                         <?= form_error('alamat', '<small class="text-danger">', '</small>'); ?>

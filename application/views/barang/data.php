@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                   Data Barang
+                    Data Barang
                 </h4>
             </div>
             <div class="col-auto">
@@ -26,6 +26,7 @@
                     <th>#</th>
                     <th>ID</th>
                     <th>Nama</th>
+                    <th>Nama Vendor</th>
                     <th>Jenis</th>
                     <th>Stok</th>
                     <th>Satuan</th>
@@ -38,15 +39,16 @@
                 $no = 1;
                 if ($barang) :
                     foreach ($barang as $b) :
-                        ?>
+                ?>
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $b['id_barang']; ?></td>
                             <td><?= $b['nama_barang']; ?></td>
+                            <td><?= $b['nama_vendor']; ?> </td>
                             <td><?= $b['nama_jenis']; ?></td>
                             <td><?= $b['stok']; ?></td>
                             <td><?= $b['nama_satuan']; ?></td>
-                            <td><?php echo '$'.number_format($b['harga']);?></td>
+                            <td><?php echo '$' . number_format($b['harga']); ?></td>
                             <td>
                                 <a href="<?= base_url('barang/edit/') . $b['id_barang'] ?>" class="btn btn-info btn-circle btn-sm"><i class="fa fa-edit"></i></a>
                                 <a onclick="return confirm('Yakin ingin hapus?')" href="<?= base_url('barang/delete/') . $b['id_barang'] ?>" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>

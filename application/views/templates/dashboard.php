@@ -99,19 +99,20 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('barangmasuk'); ?>">
+                <a class="nav-link pb-0 " href="<?= base_url('barangkeluar'); ?>">
+                    <i class="fas fa-fw fa-people-carry"></i>
+                    <span>Barang Masuk </span>
+                </a>
+            </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link " href="<?= base_url('barangmasuk'); ?>">
                     <i class="fas fa-fw fa-truck-loading"></i>
-                    <span>Barang Masuk</span>
+                    <span>Pemindahan Barang</span>
                 </a>
             </li>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('barangkeluar'); ?>">
-                    <i class="fas fa-fw fa-people-carry"></i>
-                    <span>Pemindahan Barang </span>
-                </a>
-            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -348,10 +349,11 @@
     <script type="text/javascript">
         let hal = '<?= $this->uri->segment(1); ?>';
 
-        let satuan = $('#satuan');
+        let satuan = $('#satuaan');
         let stok = $('#stok');
         let harga = $('#harga');
         let total = $('#total_stok');
+        let nama_vendor = $('#nama_vendor');
         let hargafix = $('#total_nominal');
         let total_nominal_cart = $('#total_nominal_cart');
         let grand_total = $('#grand_total');
@@ -361,8 +363,10 @@
             let url = '<?= base_url('barang/getstok/'); ?>' + this.value;
             $.getJSON(url, function(data) {
                 satuan.html(data.nama_satuan);
+                nama_vendor.html(data.nama_vendor);
                 stok.val(data.stok);
                 harga.val(data.harga);
+                nama_vendor.html(data.nama_vendor);
                 total.val(data.stok);
                 jumlah.focus();
             });

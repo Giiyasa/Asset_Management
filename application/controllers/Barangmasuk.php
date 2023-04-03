@@ -14,7 +14,7 @@ class Barangmasuk extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Barang Masuk";
+        $data['title'] = "Pemindahan Barang";
         $data['barangmasuk'] = $this->admin->getBarangMasuk();
         $this->template->load('templates/dashboard', 'barang_masuk/data', $data);
     }
@@ -32,13 +32,13 @@ class Barangmasuk extends CI_Controller
     {
         $this->_validasi();
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Barang Masuk";
+            $data['title'] = "Pemindahan Barang";
             $data['supplier'] = $this->admin->get('supplier');
             $data['barang'] = $this->admin->get('barang');
             
 
             // Mendapatkan dan men-generate kode transaksi barang masuk
-            $kode = 'I' . date('ymd');
+            $kode = 'INVT - ' . date('ymd');
             $kode_terakhir = $this->admin->getMax('barang_masuk', 'id_barang_masuk', $kode);
             $kode_tambah = substr($kode_terakhir, -4, 4);
             $kode_tambah++;

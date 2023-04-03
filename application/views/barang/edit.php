@@ -31,6 +31,13 @@
                     </div>
                 </div>
                 <div class="row form-group">
+                    <label class="col-md-3 text-md-right" for="nama_vendor">Nama Vendor</label>
+                    <div class="col-md-9">
+                        <input value="<?= set_value('nama_vendor', $barang['nama_vendor']); ?>" name="nama_vendor" id="nama_vendor" type="text" class="form-control" placeholder="Name">
+                        <?= form_error('nama_vendor', '<small class="text-danger">', '</small>'); ?>
+                    </div>
+                </div>
+                <div class="row form-group">
                     <label class="col-md-3 text-md-right" for="jenis_id">Tipe Barang</label>
                     <div class="col-md-9">
                         <div class="input-group">

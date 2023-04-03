@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                        Form Tambah Barang
+                            Form Tambah Barang
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -35,6 +35,13 @@
                     <div class="col-md-9">
                         <input value="<?= set_value('nama_barang'); ?>" name="nama_barang" id="nama_barang" type="text" class="form-control" placeholder="Enter Name">
                         <?= form_error('nama_barang', '<small class="text-danger">', '</small>'); ?>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-md-3 text-md-right" for="nama_vendor">Nama Vendor</label>
+                    <div class="col-md-9">
+                        <input value="<?= set_value('nama_vendor'); ?>" name="nama_vendor" id="nama_vendor" type="text" class="form-control" placeholder="Enter Nama Vendor">
+                        <?= form_error('nama_vendor', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -72,13 +79,13 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                <label class="col-md-3 text-md-right" for="harga">Price</label>
+                    <label class="col-md-3 text-md-right" for="harga">Price</label>
                     <div class="col-md-9">
                         <div class="input-group">
-                        <div class="input-group-append">
-                            <span class="input-group-text">$</span>
-                        </div>
-                        <input value="<?= set_value('harga'); ?>" name="harga" id="harga" type="number" class="form-control" placeholder="Price">
+                            <div class="input-group-append">
+                                <span class="input-group-text">$</span>
+                            </div>
+                            <input value="<?= set_value('harga'); ?>" name="harga" id="harga" type="number" class="form-control" placeholder="Price">
                         </div>
                     </div>
                 </div>

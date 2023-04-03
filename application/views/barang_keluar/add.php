@@ -49,9 +49,9 @@
                 </div>
 
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="nama_vendor">Nama Vendor</label>
+                    <label class="col-md-4 text-md-right" for="vendor_nama">Nama Vendor</label>
                     <div class="col-md-5">
-                        <input id="nama_vendor" name="nama_vendor" type="text" class="form-control">
+                        <input id="vendor_nama" name="vendor_nama" type="text" class="form-control">
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
                         <div class="input-group">
                             <input value="<?= set_value('jumlah_keluar'); ?>" name="jumlah_keluar" id="jumlah_keluar" type="number" min="0" value="0" step="0.1" class="form-control" placeholder="Out-Going Number">
                             <div class="input-group-append">
-                                <span class="input-group-text" id="satuan">Units</span>
+                                <span class="input-group-text" id="satuaan">Units</span>
                             </div>
                         </div>
                         <?= form_error('jumlah_keluar', '<small class="text-danger">', '</small>'); ?>

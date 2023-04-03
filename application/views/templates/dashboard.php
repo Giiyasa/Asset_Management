@@ -349,11 +349,11 @@
     <script type="text/javascript">
         let hal = '<?= $this->uri->segment(1); ?>';
 
-        let satuan = $('#satuaan');
+        let satuan = $('#satuan');
         let stok = $('#stok');
         let harga = $('#harga');
         let total = $('#total_stok');
-        let nama_vendor = $('#nama_vendor');
+        let nama = $('#nama_vendor');
         let hargafix = $('#total_nominal');
         let total_nominal_cart = $('#total_nominal_cart');
         let grand_total = $('#grand_total');
@@ -363,10 +363,9 @@
             let url = '<?= base_url('barang/getstok/'); ?>' + this.value;
             $.getJSON(url, function(data) {
                 satuan.html(data.nama_satuan);
-                nama_vendor.html(data.nama_vendor);
+                nama.html(data.nama_vendor);
                 stok.val(data.stok);
                 harga.val(data.harga);
-                nama_vendor.html(data.nama_vendor);
                 total.val(data.stok);
                 jumlah.focus();
             });

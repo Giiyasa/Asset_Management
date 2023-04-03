@@ -121,7 +121,7 @@ class Barangkeluar extends CI_Controller
                 'qty'      => $this->input->post('jumlah_keluar'),
                 'amount'   => str_replace(",", "", $this->input->post('harga'))
             );
-            // var_dump($data);
+            // // var_dump($data);
             $this->cart->insert($data);
             redirect('Barangkeluar/add');
         }

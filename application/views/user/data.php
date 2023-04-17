@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Available User's Data
+                    Data User
                 </h4>
             </div>
             <div class="col-auto">
@@ -13,7 +13,7 @@
                         <i class="fa fa-user-plus"></i>
                     </span>
                     <span class="text">
-                        Add New User
+                        Tambah user
                     </span>
                 </a>
             </div>
@@ -24,10 +24,10 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Contact</th>
+                    <th>Kontak</th>
                     <th>Role</th>
                     <th>Action</th>
                 </tr>
@@ -54,7 +54,7 @@
                     <?php endforeach;
                     else : ?>
                     <tr>
-                        <td colspan="8" class="text-center">Please add a new user</td>
+                        <td colspan="8" class="text-center"> tambah User Baru </td>
                     </tr>
                 <?php endif; ?>
             </tbody>

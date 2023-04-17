@@ -72,11 +72,11 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                <label class="col-md-3 text-md-right" for="harga">Price</label>
+                <label class="col-md-3 text-md-right" for="harga">Harga</label>
                     <div class="col-md-9">
                         <div class="input-group">
                         <div class="input-group-append">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text">Rp.</span>
                         </div>
                         <input value="<?= set_value('harga'); ?>" name="harga" id="harga" type="number" class="form-control" placeholder="Price">
                         </div>

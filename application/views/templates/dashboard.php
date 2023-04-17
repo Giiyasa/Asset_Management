@@ -101,7 +101,7 @@
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('barangmasuk'); ?>">
                     <i class="fas fa-fw fa-truck-loading"></i>
-                    <span>Barang Masuk</span>
+                    <span>Pemindahan Barang</span>
                 </a>
             </li>
 
@@ -109,15 +109,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('barangkeluar'); ?>">
                     <i class="fas fa-fw fa-people-carry"></i>
-                    <span>Pemindahan Barang </span>
+                    <span>Barang Masuk </span>
                 </a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Report
             </div>
 
@@ -126,7 +126,7 @@
                     <i class="fas fa-fw fa-print"></i>
                     <span>Fetch Report</span>
                 </a>
-            </li>
+            </li> -->
 
             <?php if (is_admin()) : ?>
                 <!-- Divider -->
@@ -227,7 +227,7 @@
             <footer class="sticky-footer bg-light">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span> &copy; POS System 2021 &bull; CodeIgniter</span>
+                        <span> &copy; Inventory System 2021 &bull; CodeIgniter</span>
                     </div>
                 </div>
             </footer>
@@ -249,12 +249,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to exit the system?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Apa Kamu Yakin Untuk Keluar Dari Sistem?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">x</span>
                     </button>
                 </div>
-                <div class="modal-body">Click "Logout" to exit the sytem</div>
+                <div class="modal-body">Click "Logout" Untuk Keluar Dari Sistem</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-danger" href="<?= base_url('logout'); ?>">Logout</a>

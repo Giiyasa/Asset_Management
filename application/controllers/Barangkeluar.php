@@ -14,7 +14,7 @@ class Barangkeluar extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Pemindahan Barang";
+        $data['title'] = "Barang Masuk ";
         $data['barangkeluar'] = $this->admin->getBarangkeluar();
         $data['id_barang_keluar'] = "";
         $this->template->load('templates/dashboard', 'barang_keluar/data', $data);
@@ -35,14 +35,7 @@ class Barangkeluar extends CI_Controller
         $stok = $this->admin->get('barang', ['id_barang' => $input])['stok'];
         $stok_valid = $stok + 0.1;
        
-        $this->form_validation->set_rules(
-            'jumlah_keluar',
-            'Jumlah Keluar',
-            "required|trim|numeric|greater_than[0]|less_than[{$stok_valid}]",
-            [
-                'less_than' => "Total Exits cannot be more than {$stok}"
-            ]
-        );
+      
     }
 
     public function add()
@@ -50,7 +43,7 @@ class Barangkeluar extends CI_Controller
         $this->_validasi();
         if ($this->form_validation->run() == false) {
             $data['title'] = "Pemindahan Barang";
-            $data['barang'] = $this->admin->get('barang', null, ['stok >' => 0]);
+            $data['barang'] = $this->admin->get('barang');
 
             // Mendapatkan dan men-generate kode transaksi barang keluar
             $kode = 'S' . date('ymd');
@@ -100,7 +93,7 @@ class Barangkeluar extends CI_Controller
         $this->_validasi_cart();
         if ($this->form_validation->run() == false) {
         $data['title'] = "Pemindahan Barang";
-        $data['barang'] = $this->admin->get('barang', null, ['stok >' => 0]);
+        $data['barang'] = $this->admin->get('barang');
 
         // Mendapatkan dan men-generate kode transaksi barang keluar
         $kode = 'S-' . date('y');
@@ -144,7 +137,7 @@ class Barangkeluar extends CI_Controller
         if ($id) {
         $get = $this->admin->getIDBarangKeluar2($id)->result_array();
         foreach ($get as $i) {
-        $data['stok'] = $i['jumlah_keluar'] + $i['stok'];
+        $data['stok'] = $i['jumlah_keluar'] - $i['stok'];
         $this->admin->update_stok($i['barang_id'], $data);
         // var_dump($data);
         }
@@ -171,6 +164,7 @@ class Barangkeluar extends CI_Controller
     }
 
     public function surat_jalan($id){
+
         $x['title'] = "Invoice";
         $x['data'] = $this->admin->getIDBarangKeluar($id);
         $this->load->view('faktur/surat_jalan', $x);

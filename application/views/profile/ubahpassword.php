@@ -33,7 +33,7 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-md-9 offset-md-3">
-                        <button type="submit" class="btn btn-primary">Make Changes</button>
+                        <button type="submit" class="btn btn-primary"> Simpan perubahan</button>
                     </div>
                 </div>
                 <?= form_close(); ?>

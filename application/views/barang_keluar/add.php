@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Tambah Data Barang Keluar
+                            Tambah Data Barang Masuk
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -25,13 +25,13 @@
                 <form action="<?php echo base_url('barangkeluar/add_to_cart'); ?>" method="post">
                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="barang_id">Goods</label>
+                    <label class="col-md-4 text-md-right" for="barang_id">Barang</label>
                     <div class="col-md-5">
                         <div class="input-group">
                             <select name="barang_id" id="barang_id" class="custom-select">
-                                <option value="" selected disabled>Please Select..</option>
+                                <option value="" selected disabled>Pilih Barang..</option>
                                 <?php foreach ($barang as $b) : ?>
-                                    <option value="<?= $b['id_barang'] ?>"><?= $b['id_barang'] . ' | ' . $b['nama_barang'] ?></option>
+                                    <option <?= $this->uri->segment(3) == $b['id_barang'] ? 'selected' : '';  ?> <?= set_select('barang_id', $b['id_barang']) ?> value="<?= $b['id_barang'] ?>"><?= $b['id_barang'] . ' | ' . $b['nama_barang'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <div class="input-group-append">
@@ -42,19 +42,19 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="harga">Price</label>
+                    <label class="col-md-4 text-md-right" for="harga">Harga</label>
                     <div class="col-md-5">
                         <input readonly="readonly" id="harga" name="harga" type="number" class="form-control">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="stok">Stock</label>
+                    <label class="col-md-4 text-md-right" for="stok">Stok</label>
                     <div class="col-md-5">
                         <input readonly="readonly" id="stok" name="stok" type="number" class="form-control">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="jumlah_keluar">Out-Going Number</label>
+                    <label class="col-md-4 text-md-right" for="jumlah_keluar">Jumlah barang Masuk</label>
                     <div class="col-md-5">
                         <div class="input-group">
                             <input value="<?= set_value('jumlah_keluar'); ?>" name="jumlah_keluar" id="jumlah_keluar" type="number" min="0" value="0" step="0.1" class="form-control" placeholder="Out-Going Number">
@@ -66,17 +66,17 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="total_stok">Total Stock</label>
+                    <label class="col-md-4 text-md-right" for="total_stok">Total Stok</label>
                     <div class="col-md-5">
                         <input readonly="readonly" id="total_stok" type="number" class="form-control">
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="total_nominal">Total</label>
+                    <label class="col-md-4 text-md-right" for="total_nominal">Total Harga</label>
                     <div class="col-md-5">
                         <div class="input-group">
                         <div class="input-group-append">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text">Rp.</span>
                         </div>
                         <input readonly="readonly" name="total_nominal" id="total_nominal" type="number" class="form-control">
                         </div>
@@ -97,9 +97,9 @@
                 <table class="table table-hover table-bordered" style="font-size:12px;margin-top:10px;">
                 <thead>
                     <tr>
-                        <th style="text-align:center;">Goods</th>
-                        <th style="text-align:center;">Price</th>
-                        <th style="text-align:center;">Quantity</th>
+                        <th style="text-align:center;">Barang</th>
+                        <th style="text-align:center;">Harga</th>
+                        <th style="text-align:center;">Jumlah Barang</th>
                         <th style="text-align:center;">Sub Total</th>
                         <th style="width:100px;text-align:center;">Action</th>
                     </tr>
@@ -110,10 +110,9 @@
                     <?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
                     <tr>
                          <td style="text-align:center;"><?=$items['id'];?> | <?=$items['name'];?></td>
-                         <td style="text-align:center;"><?php echo '$'.number_format($items['amount']);?></td>
+                         <td style="text-align:center;"><?php echo 'Rp.'.number_format($items['amount']);?></td>
                          <td style="text-align:center;"><?php echo number_format($items['qty'],1);?></td>
-                         <td style="text-align:center;"><?php echo '$'.number_format($items['subtotal']);?></td>
-                        
+                         <td style="text-align:center;"><?php echo 'Rp.'.number_format($items['subtotal']);?></td>   
                          <td style="text-align:center;"><a href="<?php echo base_url().'Barangkeluar/remove/'.$items['rowid'];?>" class="btn btn-danger btn-sm"> Cancel</a></td>
                     </tr>
                     
@@ -128,7 +127,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Out-Going Goods Form - Additional Details
+                            Barang Masuk Detail
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -142,21 +141,21 @@
             <input type="hidden" name="id_barang_keluar" value="<?php echo $id_barang_keluar; ?>">
             <input type="hidden" name="user_id" value="<?php echo $this->session->userdata('login_session')['user']; ?>">
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="id_barang_keluar">ID OGT</label>
+                    <label class="col-md-4 text-md-right" for="id_barang_keluar">ID - IDB</label>
                     <div class="col-md-4">
                         <input value="<?= $id_barang_keluar; ?>" type="text" readonly="readonly" class="form-control">
                         <?= form_error('id_barang_keluar', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="tanggal_keluar">Out-Date</label>
+                    <label class="col-md-4 text-md-right" for="tanggal_keluar">Tanggal Masuk</label>
                     <div class="col-md-4">
                         <input value="<?= set_value('tanggal_keluar', date('Y-m-d')); ?>" name="tanggal_keluar" id="tanggal_keluar" type="text" class="form-control date" placeholder="Tanggal Keluar...">
                         <?= form_error('tanggal_keluar', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="nama_penerima">Name</label>
+                    <label class="col-md-4 text-md-right" for="nama_penerima">Nama Vendor</label>
                     <div class="col-md-5">
                         <input id="nama_penerima" name="nama_penerima" type="text" class="form-control">
                         <?= form_error('nama_penerima', '<small class="text-danger">', '</small>'); ?>
@@ -164,7 +163,7 @@
                 </div>
 
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="alamat">Address</label>
+                    <label class="col-md-4 text-md-right" for="alamat">Alamat</label>
                     <div class="col-md-5">
                         <input id="alamat" name="alamat" type="text" class="form-control">
                         <?= form_error('alamat', '<small class="text-danger">', '</small>'); ?>
@@ -176,11 +175,12 @@
                     <div class="col-md-5">
                         <div class="input-group">
                             <div class="input-group-append">
-                                <span class="input-group-text">$</span>
+                                <span class="input-group-text">Rp.</span>
                             </div>
                             <input name="diskon" id="diskon" type="number" class="form-control" min="1" max="999999999" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <?= form_error('diskon', '<small class="text-danger">', '</small>'); ?>
                         </div>
+                        <div class="blockquote-footer"> Dapat Di Isi Jika Vendor Memberikan Diskon.</div>
                     </div>
                 </div>
 
@@ -189,7 +189,7 @@
                     <div class="col-md-5">
                         <div class="input-group">
                             <div class="input-group-append">
-                                <span class="input-group-text">$</span>
+                                <span class="input-group-text">Rp.</span>
                             </div>
                             <input readonly="readonly" name="total_nominal" id="total_nominal_cart" value="<?php echo $this->cart->total();?>" type="number" class="form-control">
                         </div>
@@ -197,11 +197,11 @@
                 </div>
 
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="grand_total">Total (After Discount)</label>
+                    <label class="col-md-4 text-md-right" for="grand_total">Total (Setelah Discount)</label>
                     <div class="col-md-5">
                         <div class="input-group">
                         <div class="input-group-append">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text">Rp.</span>
                         </div>
                         <input readonly="readonly" name="grand_total" id="grand_total" placeholder="<?php echo $this->cart->total();?>" type="number" class="form-control">
                         <input name="grand_total_hidden" value="<?php echo $this->cart->total();?>" type="hidden" class="form-control">

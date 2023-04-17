@@ -46,7 +46,7 @@
                 </div>
                 <hr>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="nama">Name</label>
+                    <label class="col-md-4 text-md-right" for="nama">Nama</label>
                     <div class="col-md-6">
                         <input value="<?= set_value('nama'); ?>" type="text" id="nama" name="nama" class="form-control" placeholder="Name">
                         <?= form_error('nama', '<span class="text-danger small">', '</span>'); ?>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="no_telp">Contact Number</label>
+                    <label class="col-md-4 text-md-right" for="no_telp">No Telepon</label>
                     <div class="col-md-6">
                         <input value="<?= set_value('no_telp'); ?>" type="text" id="no_telp" name="no_telp" class="form-control" placeholder="Contact Number">
                         <?= form_error('no_telp', '<span class="text-danger small">', '</span>'); ?>
@@ -85,7 +85,7 @@
                     <div class="col-md-8">
                         <button type="submit" class="btn btn-primary btn-icon-split">
                             <span class="icon"><i class="fa fa-save"></i></span>
-                            <span class="text">Add</span>
+                            <span class="text">Tambah</span>
                         </button>
                         <button type="reset" class="btn btn-danger">
                             Reset

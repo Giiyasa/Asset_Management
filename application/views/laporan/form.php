@@ -3,26 +3,26 @@
         <div class="card shadow-sm border-bottom-primary">
             <div class="card-header bg-white py-3">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Report Form
+                    Report
                 </h4>
             </div>
             <div class="card-body">
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open(); ?>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="transaksi">Transaction Report</label>
+                    <label class="col-md-3 text-md-right" for="transaksi">Inventory Report</label>
                     <div class="col-md-9">
                         <div class="custom-control custom-radio">
                             <input value="barang_masuk" type="radio" id="barang_masuk" name="transaksi" class="custom-control-input">
-                            <label class="custom-control-label" for="barang_masuk">Incoming Goods</label>
+                            <label class="custom-control-label" for="barang_masuk">Pemindahan Barang</label>
                         </div>
                         <div class="custom-control custom-radio">
                             <input value="barang_keluar" type="radio" id="barang_keluar" name="transaksi" class="custom-control-input">
-                            <label class="custom-control-label" for="barang_keluar">Out-Going Goods</label>
+                            <label class="custom-control-label" for="barang_keluar">Barang Masuk</label>
                         </div>
                         <div class="custom-control custom-radio">
                             <input value="barang_keluar_nominal" type="radio" id="barang_keluar_nominal" name="transaksi" class="custom-control-input">
-                            <label class="custom-control-label" for="barang_keluar_nominal">Out-Going Goods + Total Nominal</label>
+                            <label class="custom-control-label" for="barang_keluar_nominal">Barang Masuk + Total Nominal</label>
                         </div>
                         <?= form_error('transaksi', '<span class="text-danger small">', '</span>'); ?>
                     </div>
@@ -46,7 +46,7 @@
                                 <i class="fa fa-print"></i>
                             </span>
                             <span class="text">
-                                Fetch & Download
+                              Download
                             </span>
                         </button>
                     </div>

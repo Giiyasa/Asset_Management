@@ -34,7 +34,7 @@ class Barangmasuk extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['title'] = "Barang Masuk";
             $data['supplier'] = $this->admin->get('supplier');
-            $data['barang'] = $this->admin->get('barang');
+            $data['barang'] = $this->admin->get('barang', null, ['stok >' => 0]);
             
 
             // Mendapatkan dan men-generate kode transaksi barang masuk

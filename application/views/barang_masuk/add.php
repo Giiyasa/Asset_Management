@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Tambah Data Barang Masuk
+                            Tambah Data Pemindahan Barang
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -24,7 +24,7 @@
                 <?= $this->session->flashdata('pesan'); ?>
                 <?= form_open('', [], ['id_barang_masuk' => $id_barang_masuk, 'user_id' => $this->session->userdata('login_session')['user']]); ?>
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="id_barang_masuk">ID IGT</label>
+                    <label class="col-md-4 text-md-right" for="id_barang_masuk">ID ODB</label>
                     <div class="col-md-4">
                         <input value="<?= $id_barang_masuk; ?>" type="text" readonly="readonly" class="form-control">
                         <?= form_error('id_barang_masuk', '<small class="text-danger">', '</small>'); ?>
@@ -61,7 +61,7 @@
                             <select name="barang_id" id="barang_id" class="custom-select">
                                 <option value="" selected disabled>Pilih Barang..</option>
                                 <?php foreach ($barang as $b) : ?>
-                                    <option <?= $this->uri->segment(3) == $b['id_barang'] ? 'selected' : '';  ?> <?= set_select('barang_id', $b['id_barang']) ?> value="<?= $b['id_barang'] ?>"><?= $b['id_barang'] . ' | ' . $b['nama_barang'] ?></option>
+                                    <option value="<?= $b['id_barang'] ?>"><?= $b['id_barang'] . ' | ' . $b['nama_barang'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <div class="input-group-append">
@@ -81,7 +81,7 @@
                     </div>
                 </div>          
                     <div class="row form-group">
-                        <label class="col-md-4 text-md-right" for="stok">Stock</label>
+                        <label class="col-md-4 text-md-right" for="stok">Stok</label>
                         <div class="col-md-5">
                             <input readonly="readonly" id="stok" type="number" class="form-control">
                         </div>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="col-md-4 text-md-right" for="total_stok">Total Stock</label>
+                        <label class="col-md-4 text-md-right" for="total_stok">Total Stok</label>
                         <div class="col-md-5">
                             <input readonly="readonly" id="total_stok" type="number" class="form-control">
                         </div>

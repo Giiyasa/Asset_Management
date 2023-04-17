@@ -3,7 +3,7 @@
         <div class="card shadow-sm border-bottom-primary">
             <div class="card-header bg-white py-3">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Edit Profile User Form
+                    Edit Profil User 
                 </h4>
             </div>
             <div class="card-body">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="no_telp">Contact</label>
+                    <label class="col-md-3 text-md-right" for="no_telp">Kontak</label>
                     <div class="col-md-9">
                         <div class="input-group">
                             <div class="input-group-prepend">

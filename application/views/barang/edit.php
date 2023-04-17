@@ -69,7 +69,7 @@
                     <div class="col-md-9">
                         <div class="input-group">
                         <div class="input-group-append">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text">Rp.</span>
                         </div>
                         <input value="<?= set_value('harga', $barang['harga']); ?>" name="harga" id="harga" type="text" class="form-control" placeholder="Nama Barang...">
                         <?= form_error('harga', '<small class="text-danger">', '</small>'); ?>

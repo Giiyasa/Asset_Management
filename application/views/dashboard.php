@@ -56,22 +56,47 @@
             </div>
         </div>
     </div>
+</div>
 
 
+<div class="row">
+    <!-- Area Chart -->
+    <div class="col-xl-8 col-lg-7" >
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-white">Total Monthly Goods Transactions in Year <?= date('Y'); ?></h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="chart-area">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                        </div>
+                    </div>
+                    <canvas id="myAreaChart" width="669" height="320" class="chartjs-render-monitor" style="display: block; width: 669px; height: 320px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>  
 </div>
 
 <div class="row pt-5 mt-5 ">
     <div class="col-md-4">
         <div class="card shadow mb-4">
             <div class="card-header bg-warning py-3">
-                <h6 class="m-0 font-weight-bold text-white text-center">Minimum Stock of Goods</h6>
+                <h6 class="m-0 font-weight-bold text-white text-center">Total Barang</h6>
             </div>
             <div class="table-responsive">
                 <table class="table mb-0 text-center table-striped table-hover table-sm">
                     <thead>
                         <tr>
-                            <th>Goods</th>
-                            <th>Stock</th>
+                            <th>Barang</th>
+                            <th>Stok</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -98,12 +123,13 @@
                     </tbody>
                 </table>
             </div>
+            <div class="blockquote-footer lead text-center ">Barang akan Muncul Ketika Kurang dari 20</div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card shadow mb-4">
             <div class="card-header bg-success py-3">
-                <h6 class="m-0 font-weight-bold text-white text-center">Riwayat Penambahan Asset</h6>
+                <h6 class="m-0 font-weight-bold text-white text-center">Riwayat Pemindahan Barang</h6>
             </div>
             <div class="table-responsive">
                 <table class="table mb-0 table-sm table-striped table-hover text-center">
@@ -111,6 +137,7 @@
                         <tr>
                             <th>Tanggal</th>
                             <th>Nama Barang</th>
+                            <th>Departemen</th>
                             <th>Total</th>
                         </tr>
                     </thead>
@@ -119,6 +146,7 @@
                             <tr>
                                 <td><strong><?= $tbm['tanggal_masuk']; ?></strong></td>
                                 <td><?= $tbm['nama_barang']; ?></td>
+                                <td><?= $tbm['nama_supplier'];?></td>
                                 <td><span class="badge badge-success"><?= $tbm['jumlah_masuk']; ?></span></td>
                             </tr>
                         <?php endforeach; ?>
@@ -130,7 +158,7 @@
     <div class="col-md-4">
         <div class="card shadow mb-4">
             <div class="card-header bg-danger py-3">
-                <h6 class="m-0 font-weight-bold text-white text-center">Riwayat Penyerahan Barang</h6>
+                <h6 class="m-0 font-weight-bold text-white text-center">Riwayat Penambahan Barang</h6>
             </div>
             <div class="table-responsive">
                 <table class="table mb-0 table-sm table-striped table-hover text-center">
@@ -138,7 +166,8 @@
                         <tr>
                             <th>Tanggal</th>
                             <th>Nama Barang</th>
-                            <th>Total</th>
+                            <td>Total Harga</td>
+                            <th>Total Penambahan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -146,6 +175,7 @@
                             <tr>
                                 <td><strong><?= $tbk['tanggal_keluar']; ?></strong></td>
                                 <td><?= $tbk['nama_barang']; ?></td>
+                                <td><?= 'Rp.' . number_format ($tbk['total_nominal_dtl']); ?></td>
                                 <td><span class="badge badge-danger"><?= $tbk['jumlah_keluar']; ?></span></td>
                             </tr>
                         <?php endforeach; ?>

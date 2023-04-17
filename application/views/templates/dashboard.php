@@ -430,7 +430,7 @@
                 data: {
                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                     datasets: [{
-                            label: "Total Incoming Items",
+                            label: "Total Pemindahan Barang",
                             lineTension: 0.3,
                             backgroundColor: "rgba(78, 115, 223, 0.05)",
                             borderColor: "rgba(78, 115, 223, 1)",
@@ -445,7 +445,7 @@
                             data: <?= json_encode($cbm); ?>,
                         },
                         {
-                            label: "Total Out-Goings",
+                            label: "Total Barang Masuk",
                             lineTension: 0.3,
                             backgroundColor: "rgba(231, 74, 59, 0.05)",
                             borderColor: "#e74a3b",
